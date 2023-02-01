@@ -1,10 +1,8 @@
 import express from "express";
-import axios from "axios";
+import { api } from "../services/api";
 
 export const getUsers = async (req: express.Request, res: express.Response) => {
-  const { data } = await axios.get(
-    "https://mockend.com/juunegreiros/BE-test-api/users"
-  );
+  const { data } = await api.get("/users");
 
   const users = data;
 
