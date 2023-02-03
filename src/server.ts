@@ -7,6 +7,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use(router);
+app.use("/api", router);
 
 app.listen(3000, () => console.log("Server is running at port 3000..."));
