@@ -10,4 +10,4 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", router);
 
-app.listen(3000, () => console.log("Server is running at port 3000..."));
+app.listen(3333, () => console.log("Server is running at port 3000..."));
