@@ -1,6 +1,8 @@
 import express from "express";
 import { api } from "../services/api";
 
+import { percentageOfBudget } from "../utils/percentage_of_budget";
+
 import { UserType } from "../@types/UserType";
 
 export const getUsers = async (req: express.Request, res: express.Response) => {
@@ -18,8 +20,18 @@ export const getBudget = async (
   const { userID, productsID } = req.body;
 
   const users = await api.get("/users");
+  const productsResponse = await api.get("/products");
 
-  const user = users.data.filter((user: UserType) => user.id === userID);
+  const user: UserType[] = users.data.filter(
+    (user: UserType) => user.id === userID
+  );
 
-  return res.send({ user });
+  const products = productsResponse.data.filter((product: any) =>
+    productsID.includes(product.id)
+  );
+
+  const userTax = user[0].tax;
+  const budgetPercent = percentageOfBudget(userTax, products);
+
+  return res.send({ products, budgetPercent });
 };
