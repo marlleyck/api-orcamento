@@ -4,6 +4,7 @@ import { api } from "../services/api";
 import { percentageOfBudget } from "../utils/percentage_of_budget";
 
 import { UserType } from "../@types/UserType";
+import { ProductType } from "../@types/ProductType";
 
 export const getUsers = async (req: express.Request, res: express.Response) => {
   const { data } = await api.get("/users");
@@ -26,7 +27,7 @@ export const getBudget = async (
     (user: UserType) => user.id === userID
   );
 
-  const products = productsResponse.data.filter((product: any) =>
+  const products = productsResponse.data.filter((product: ProductType) =>
     productsID.includes(product.id)
   );
 
