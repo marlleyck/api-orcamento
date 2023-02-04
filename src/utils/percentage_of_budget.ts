@@ -6,7 +6,7 @@ export const percentageOfBudget = (tax: number, products: ProductType[]) => {
 
   products.map((product: ProductType) => {
     const budgetAccount = (taxPercent * product.price).toFixed(2);
-    budgetPercent.push(+budgetAccount);
+    budgetPercent.push(Number(budgetAccount));
   });
 
   return budgetPercent;
