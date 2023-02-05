@@ -7,6 +7,11 @@ export const getProducts = async (
 ) => {
   const { data } = await api.get("/products");
 
+  // Validation
+  if (!data) {
+    return res.status(404).send({ error: "No products found!" });
+  }
+
   const products = data;
 
   return res.send({ products });
