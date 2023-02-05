@@ -61,5 +61,5 @@ export const getBudget = async (
   const userTax = user[0].tax;
   const budgetPercent = percentageOfBudget(userTax, products);
 
-  return res.send({ products, budgetPercent });
+  return res.status(200).send({ budgetPercent });
 };
