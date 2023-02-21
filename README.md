@@ -27,7 +27,7 @@
 <p align="center">ou</p>
 <pre><strong>$ yarn</strong></pre>
 
-<p align="center">Crie um arquivo ".env" na raiz da pasta e coloque uma variável "PORT" contendo a porta que o seu projeto irá rodar</p>
+<p align="center">Crie um arquivo ".env" na raiz da pasta e coloque uma variável "PORT" contendo a porta que o seu projeto irá rodar e uma variável "baseURL" contendo a URL que sua API irá consultar</p>
 <pre><strong>$ touch .env</strong></pre>
 
 <br />
