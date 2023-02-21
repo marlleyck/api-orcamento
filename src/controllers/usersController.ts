@@ -19,7 +19,7 @@ export const getUsers = async (req: express.Request, res: express.Response) => {
   return res.status(200).send({ users });
 };
 
-export const getBudget = async (
+export const returnBudget = async (
   req: express.Request,
   res: express.Response
 ) => {
