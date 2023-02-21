@@ -1,6 +1,7 @@
+import "dotenv/config";
 import request from "supertest";
 
-import { baseURL } from "../../src/services/api";
+const baseURL = process.env.baseURL;
 
 describe("Receive products", () => {
   it("should get mockend products", async () => {
