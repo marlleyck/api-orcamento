@@ -1,4 +1,4 @@
-import express from "express";
+import { Request, Response } from "express";
 import { api } from "../services/api";
 
 import { percentageOfBudget } from "../utils/percentage_of_budget";
@@ -6,7 +6,7 @@ import { percentageOfBudget } from "../utils/percentage_of_budget";
 import { UserType } from "../@types/UserType";
 import { ProductType } from "../@types/ProductType";
 
-export const getUsers = async (req: express.Request, res: express.Response) => {
+export const getUsers = async (req: Request, res: Response) => {
   const { data } = await api.get("/users");
 
   // Validation
@@ -19,10 +19,7 @@ export const getUsers = async (req: express.Request, res: express.Response) => {
   return res.status(200).send({ users });
 };
 
-export const returnBudget = async (
-  req: express.Request,
-  res: express.Response
-) => {
+export const returnBudget = async (req: Request, res: Response) => {
   const { userID, productsID } = req.body;
 
   // Validations

@@ -1,10 +1,7 @@
-import express from "express";
+import { Request, Response } from "express";
 import { api } from "../services/api";
 
-export const getProducts = async (
-  req: express.Request,
-  res: express.Response
-) => {
+export const getProducts = async (req: Request, res: Response) => {
   const { data } = await api.get("/products");
 
   // Validation
