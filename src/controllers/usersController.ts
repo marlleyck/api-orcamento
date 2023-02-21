@@ -9,7 +9,6 @@ import { ProductType } from "../@types/ProductType";
 export const getUsers = async (req: Request, res: Response) => {
   const { data } = await api.get("/users");
 
-  // Validation
   if (!data) {
     return res.status(404).send({ error: "No users found!" });
   }
@@ -22,7 +21,6 @@ export const getUsers = async (req: Request, res: Response) => {
 export const returnBudget = async (req: Request, res: Response) => {
   const { userID, productsID } = req.body;
 
-  // Validations
   if (!userID) {
     return res.status(404).send({ error: "User ID cannot be empty!" });
   }
